@@ -10,7 +10,9 @@
             <p>Name: {{ newcontact.getName }}</p>
             <p>Phone Number: {{ newcontact.getNumber }}</p>
             <p>Address: {{ newcontact.getAddress }}</p>
-            <a href="/">Create a new contact</a>
+            <form action="/">
+                <button type='submit' class='btn btn-danger'>Create a New Contact</button>
+            </form>
         </div>
     </body>
 </html>
