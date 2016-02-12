@@ -20,17 +20,22 @@
                     <label for="address">Enter an Address</label>
                     <input id="address" name="address" type="text" class="form-control">
                 </div>
-            <button type="submit" class="btn btn-danger">Create</button>
+            <button type="submit" class="btn btn-primary">Create</button>
             </form>
 
             {% if contacts is not empty%}
                 <h2>Existing Contacts:</h2>
                     {% for contact in contacts %}
-                        <li><h4>{{ contact.getName }}</h4></li>
-                        <li>Number: {{ contact.getNumber }}</li>
+                        <h4>{{ contact.getName }}</h4>
+                        <li>Phone Number: {{ contact.getNumber }}</li>
                         <li>Address: {{ contact.getAddress }}</li>
                     {% endfor %}
                 {% endif %}
+
+            {% if contacts is empty%}
+                <h2>No Existing Contacts</h2>
+                <h4>Please complete form to create a contact</h4>
+            {% endif %}
 
             <br>
             <form action='/delete_tasks' method='post'>

@@ -14,7 +14,20 @@
     ));
 
     $app->get('/', function () use ($app) {
+
         return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
+
+    });
+
+    $app->post('/empty', function () use ($app) {
+
+        $all_contacts = Contact::getAll();
+
+        if (empty($all_contacts)) {
+
+        return $app['twig']->render('empty.html.twig');
+
+        }
     });
 
     $app->post('/created', function () use ($app) {
