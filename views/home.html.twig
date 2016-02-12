@@ -23,6 +23,9 @@
             <button type="submit" class="btn btn-primary">Create</button>
             </form>
 
+            <form action="/empty" method='post'>
+            </form>
+
             {% if contacts is not empty%}
                 <h2>Existing Contacts:</h2>
                     {% for contact in contacts %}
