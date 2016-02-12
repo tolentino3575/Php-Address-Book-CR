@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <title></title>
+    </head>
+    <body>
+        <div class='container'>
+        <h1>You created a contact!</h1>
+            <p>Name: {{ newcontact.getName }}</p>
+            <p>Phone Number: {{ newcontact.getNumber }}</p>
+            <p>Address: {{ newcontact.getAddress }}</p>
+            <a href="/">Create a new contact</a>
+        </div>
+    </body>
+</html>

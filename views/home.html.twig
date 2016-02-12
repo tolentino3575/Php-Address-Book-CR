@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <title>THE home page</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="/created" method='post'>
+            <h1>Create a Contact!</h1>
+                <div class="form-group">
+                    <label for="name">Enter a Name</label>
+                    <input id="name" name="name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="number">Enter a Phone Number</label>
+                    <input id="number" name="number" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="address">Enter an Address</label>
+                    <input id="address" name="address" type="text" class="form-control">
+                </div>
+            <button type="submit" class="btn btn-danger">Create</button>
+            </form>
+
+            {% if contacts is not empty%}
+                <h2>Existing Contacts:</h2>
+                    {% for contact in contacts %}
+                        <li><h4>{{ contact.getName }}</h4></li>
+                        <li>Number: {{ contact.getNumber }}</li>
+                        <li>Address: {{ contact.getAddress }}</li>
+                    {% endfor %}
+                {% endif %}
+
+            <br>
+            <form action='/delete_tasks' method='post'>
+                <button type='submit' class='btn btn-danger'>Delete Existing Contacts</button>
+            </form>
+        </div>
+    </body>
+</html>
